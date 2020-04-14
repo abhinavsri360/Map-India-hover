@@ -9,17 +9,20 @@
 <script type="text/javascript">
     function customAlert(msg)
     {
-        var styler = document.createElement("div");
-        styler.setAttribute("style","border:solid 3px Red;width:50%;height:10%;background-color:Black;color:White");
-        styler.innerHTML = "<h1>"+msg+"</h1>";
-        setTimeout(function()
-        {
-            styler.parentNode.removeChild(styler);
-        },2000);
-        document.body.appendChild(styler);
+        document.querySelector('.bg-modal').style.display ='flex';
+        document.querySelector('.place').placeholder=msg;
+    }
+    function clo(){
+    	document.querySelector('.bg-modal').style.display = 'none';
     }
 </script>
 <h5>Hover or Click to know the state</h5>
+<div class="bg-modal">
+	<div class="modal-content">
+		<div class="close" onclick="clo()">+</div>
+		<input class="place" disabled placeholder="">
+	</div>
+</div>
 <div class="mapdiv">
     <svg height="695.70178" width="611.85999">
         <a xlink:title="Andaman and Nicobar Islands" onclick="customAlert('Andaman and Nicobar Islands')">
